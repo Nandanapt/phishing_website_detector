@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Updated background for a subtle animation */
+    background: linear-gradient(to right, #000000, #2575fc); /* Gradient background */
+    animation: animatedBackground 10s ease-in-out infinite; /* Added animation */
+    background-size: 200% 200%;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center everything vertically */
+    padding-bottom: 80px; /* Increased padding at the bottom */
+    position: relative;
+}
+
+/* Keyframes for the background animation */
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect - more transparent */
+    border-radius: 16px; /* Slightly more rounded corners */
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatCard 2s ease-in-out infinite;
+    margin-top: 0; /* Removed top margin, using justify-content on body */
+    text-align: center; /* Center the content within the container */
+    backdrop-filter: blur(10px); /* Add blur to the background, stronger blur */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Add a border */
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.container:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ffffff; /* White heading */
+    text-align: center;
+    font-size: 28px; /* Larger heading */
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px; /* Slightly increased padding */
+    margin: 15px 0; /* Increased margin for spacing */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glassy border */
+    border-radius: 12px; /* More rounded input */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    color: #ffffff;
+    font-size: 18px; /* Increased font size */
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Added border color transition */
+    backdrop-filter: blur(5px);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger focus shadow */
+    border-color: #e0e8e7; /* Highlight focused input */
+}
+
+button {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    background: linear-gradient(to right, #00f5d4, #8200c9); /* Brighter gradient button */
+    color: #ffffff;
+    border: none;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold;
+    border-radius: 12px; /* More rounded button */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease; /* Added background transition */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+    background: linear-gradient(to right, #00e0b9, #7000b0); /* Slightly shifted gradient on hover */
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px; /* Increased margin */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #00f5d4;
+}
+
+.result-box {
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 16px; /* More rounded result box */
+    margin-top: 20px; /* Increased margin */
+    font-size: 20px; /* Increased font size in result box */
+    font-weight: bold;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    animation: floatCard 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.1); /* Glassmorphism for result box */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Green for Legitimate */
+.legitimate {
+    background: linear-gradient(to right, #4CAF50, #388E3C); /* More vibrant green gradient */
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Red for Phishing */
+.phishing {
+    background: linear-gradient(to right, #FF5252, #D32F2F); /* More vibrant red gradient */
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Website Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fake Website Detector</h1>
+        <form method="POST" action="/predict">
+            <input type="text" name="url" placeholder="Enter website URL" required>
+            <button type="submit">Check</button>
+        </form>
+    </div>
+</body>
+</html>
